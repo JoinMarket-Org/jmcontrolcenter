@@ -1,0 +1,24 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+</button>
+<mat-menu #menu>
+    <button mat-menu-item routerLink="/">
+        <mat-icon>library_books</mat-icon>
+        <span>
+            Wallet
+        </span>
+    </button>
+    <button mat-menu-item routerLink="about">
+        <mat-icon>question_answer</mat-icon>
+        <span>
+            About Joinmarket Control Center
+        </span>
+    </button>
+    <button mat-menu-item routerLink="exit">
+        <mat-icon>close</mat-icon>
+        <span>
+            Quit
+        </span>
+    </button>
+
+</mat-menu>

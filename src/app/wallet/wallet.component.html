@@ -1,0 +1,10 @@
+<div>Wallet name: {{walletName$ | async}}</div>
+<div>Wallet total balance: {{ walletBalance$ | async}}</div>
+<div>
+<mat-tab-group>
+    <mat-tab  label="Account {{accountdata.account}}" *ngFor="let accountdata of (accountdatas$ | async)">
+        <app-account [acctdata]="accountdata" [accountBalance]="accountdata.account_balance"></app-account>
+    </mat-tab>
+</mat-tab-group>
+
+</div>

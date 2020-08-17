@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.confirm-dialog-container #ok-button {
+    background-color: rgb(12, 1, 161);
+    color: white;
+    border-radius: 0px;
+    justify-content: center;
+    display: flex;
+}
+
+.confirm-dialog-container span.content-span{
+    padding: 35px 16px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.horiz-center {
+    display: flex;
+    justify-content: center;
+  }

@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Unlock wallet</h2>
+<div class="mat-dialog-content">
+    <span class="content-span full-width">Enter wallet name and password:</span>
+</div>
+<mat-form-field appearance="fill">
+    <mat-label>Wallet file name</mat-label>
+    <input matInput [formControl]="fc" required>
+    <mat-hint>including extension e.g. wallet.jmdat</mat-hint>
+    <mat-error *ngIf="fc.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Password for wallet</mat-label>
+    <input matInput type=password [formControl]="fcpass" required>
+  </mat-form-field>
+  <br>
+  <!--
+  <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+-->
+<mat-dialog-actions>
+    <button mat-flat-button id="ok-button" (click)="doUnlock()">Unlock</button>
+    <button mat-flat-button id="cancel-button" (click)="closeDialog()">Cancel</button>
+</mat-dialog-actions>
+

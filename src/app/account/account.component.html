@@ -1,0 +1,22 @@
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                External branch (for deposits)
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-accountbranch [branchTitle]="acctdata.branches[0].branch"
+        [branchBalance]="acctdata.branches[0].balance"
+        [branchData]="acctdata.branches[0].entries" ></app-accountbranch>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Internal branch (not for deposits)
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-accountbranch [branchTitle]="acctdata.branches[1].branch"
+        [branchBalance]="acctdata.branches[1].balance"
+        [branchData]="acctdata.branches[1].entries" ></app-accountbranch>
+    </mat-expansion-panel>
+</mat-accordion>

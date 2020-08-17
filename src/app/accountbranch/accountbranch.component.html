@@ -1,0 +1,16 @@
+<mat-card class="account mat-elevation-z10">
+    <mat-card-header>
+        <mat-card-title>
+            {{hdPath}}
+            <button mat-button class="mat-raised-button mat-primary" [cdkCopyToClipboard]=xPub (click)="onXpubClick()">View Xpub</button>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <app-address [addressString]="address.address" [addressLabel]="address.labels" 
+        [addressPath]="address.hd_path" [addressBalance]="address.amount" 
+        *ngFor="let address of branchData"></app-address>  
+    </mat-card-content>
+    <mat-card-footer>
+        Balance: {{branchBalance}}
+    </mat-card-footer>
+</mat-card>
