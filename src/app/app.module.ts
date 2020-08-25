@@ -23,6 +23,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -30,6 +33,9 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { InfopopupdialogComponent } from './infopopupdialog/infopopupdialog.component';
 
 import { UnlockComponent } from './unlock/unlock.component';
+import { AboutComponent } from './about/about.component';
+import { JMServicesComponent } from './jmservices/jmservices.component';
+import { JMSettingsComponent } from './jmsettings/jmsettings.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,10 @@ import { UnlockComponent } from './unlock/unlock.component';
     AddressComponent,
     TopMenuComponent,
     InfopopupdialogComponent,
-    UnlockComponent
+    UnlockComponent,
+    AboutComponent,
+    JMServicesComponent,
+    JMSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +69,10 @@ import { UnlockComponent } from './unlock/unlock.component';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule
   ],
   providers: [ WalletService],
   bootstrap: [AppComponent]

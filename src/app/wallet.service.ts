@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AccountComponent } from './account/account.component';
 
@@ -15,6 +16,7 @@ export interface IWalletData {
 })
 export class WalletService {
   readonly ROOT_URL = 'https://localhost:28183';
+  isWalletOpen: boolean = false;
   walletdata: any;
   walletname: string;
   walletdisplay$: Observable<any>;
@@ -27,23 +29,25 @@ export class WalletService {
   }
   
   displayWallet(): Observable<any>{
+    const httpHeaders = new HttpHeaders()
+    .set('JMCookie', 'dummycookie');
     console.log("in display Wallet before http request")
-    return this.http.get(this.ROOT_URL + '/wallet/' + this.walletname + '/display');
+    return this.http.get(this.ROOT_URL + '/wallet/' + this.walletname + '/display', {headers: httpHeaders});
+  }
+
+  closeWallet(): Observable<any>{
+    const httpHeaders = new HttpHeaders()
+    .set('JMCookie', 'dummycookie');
+    console.log("in close Wallet before http request")
+    return this.http.get(this.ROOT_URL + '/wallet/' + this.walletname + '/lock', {headers: httpHeaders});
   }
 
   authWallet(walletname: string, password: string){
     console.log("authwallet was called");
+    const httpHeaders = new HttpHeaders({'JMCookie': 'dummycookie'});
     let authUrl = this.ROOT_URL + '/wallet/'+walletname+'/unlock';
     this.walletname = walletname;
-    /*
-    this.http.post(authUrl, {password}).subscribe(result => {
-      console.log("auth got result: " + result);
-      // auto-display on successful unlock:
-      this.walletdisplay$ = this.displayWallet();
-
-    });
-    */
-   return this.http.post(authUrl, {password});
+   return this.http.post(authUrl, {password}, {headers: httpHeaders});
   }
 
   getWalletDisplay(): Observable<any> {

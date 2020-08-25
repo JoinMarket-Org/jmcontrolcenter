@@ -1,3 +1,4 @@
+<div *ngIf="isWalletOpen(); else elseBlock">
 <div>Wallet name: {{walletName$ | async}}</div>
 <div>Wallet total balance: {{ walletBalance$ | async}}</div>
 <div>
@@ -8,3 +9,5 @@
 </mat-tab-group>
 
 </div>
+</div>
+<ng-template #elseBlock>Wallet is not yet open.</ng-template>

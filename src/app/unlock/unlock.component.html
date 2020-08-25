@@ -11,22 +11,9 @@
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Password for wallet</mat-label>
-    <input matInput type=password [formControl]="fcpass" required>
+    <input matInput type=password [formControl]="fcpass" required (keyup.enter)="doUnlock()">
   </mat-form-field>
   <br>
-  <!--
-  <mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
--->
 <mat-dialog-actions>
     <button mat-flat-button id="ok-button" (click)="doUnlock()">Unlock</button>
     <button mat-flat-button id="cancel-button" (click)="closeDialog()">Cancel</button>

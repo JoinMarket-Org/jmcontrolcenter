@@ -1,10 +1,30 @@
-<app-top-menu></app-top-menu>
-<button mat-raised-button color="primary" (click)="openUnlockDialog()">Unlock wallet</button>
-
-<!-- <button mat-raised-button color="primary" disabled=true>Primary</button>
-<button mat-raised-button color="accent">Accent</button>
-<button mat-fab color="warn" aria-label="Trying a rounded button"><mat-icon>home</mat-icon></button>
--->
-
-<app-wallet #walletcomponent>
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #start>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/wallet" (click)="start.toggle()">
+            <mat-icon>account_balance_wallet</mat-icon>
+            <span>Wallet</span>
+        </a>
+        <a mat-list-item routerLink="/services" (click)="start.toggle()">
+            <mat-icon>electrical_services</mat-icon>
+            <span>Services</span>
+        </a>
+        <a mat-list-item routerLink="/settings" (click)="start.toggle()">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+        </a>
+        <a mat-list-item routerLink="/about" (click)="start.toggle()">
+            <mat-icon>account_balance_wallet</mat-icon>
+            <span>info</span>
+        </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-toolbar color="primary">
+        <button mat-icon-button color="accent" (click)="start.open()"><mat-icon>menu</mat-icon></button>
+        <!--
+        <button mat-icon-button color="accent" (click)="openUnlockDialog()">Unlock wallet</button>
+        <button mat-icon-button color="accent" (click)="closeWallet()">Lock wallet</button>
+        -->
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
