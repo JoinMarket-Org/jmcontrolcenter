@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import {AccountComponent } from './account/account.component';
 
 
@@ -52,5 +52,22 @@ export class WalletService {
 
   getWalletDisplay(): Observable<any> {
     return this.walletdisplay$;
+  }
+  startMakerService(): Observable<any>{
+    console.log("startMakerService was called");
+    const httpHeaders = new HttpHeaders({'JMCookie': 'dummycookie'});
+    if (this.walletname){
+      let makerUrl = this.ROOT_URL + '/wallet/'+this.walletname+'/maker/start';
+    return this.http.post(makerUrl,
+      {txfee: 100,
+      cjfee_a: 2000,
+      cjfee_r: 0.0002,
+      ordertype: "swreloffer",
+      minsize: 1000000
+      }, {headers: httpHeaders});
+    }
+    else {
+      return throwError('there was not a defined walletname, so cannot start maker');
+    }
   }
 }

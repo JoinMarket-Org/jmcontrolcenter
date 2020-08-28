@@ -48,13 +48,14 @@ export class WalletComponent implements OnInit {
     let dialogRef = this.dialog.open(UnlockComponent,{});
     dialogRef.afterClosed().subscribe(result => {
       console.log("The dialog was closed");
+      if ( result ) {
       this.walletService.authWallet(result.wn, result.pass).subscribe(
         result => {
           this.walletService.isWalletOpen = true;
           this.displayWallet();
         }
       );
-
+      }
     });
   }
   closeWallet(){
