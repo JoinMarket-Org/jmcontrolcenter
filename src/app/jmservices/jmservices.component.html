@@ -1,10 +1,30 @@
-<button mat-icon-button color="primary" (click)="startMakerService()">
+<div>
+<button mat-icon-button color="primary" [disabled]="makerActive" (click)="startMakerService()">
     <mat-icon>not_started</mat-icon>
     Start maker
 </button>
+<br>
 <div *ngIf="makerActive; else elseBlock">
     Maker is active.
 </div>
 <ng-template #elseBlock>
     Maker is not currently active.
 </ng-template>
+</div>
+<div>
+<button mat-icon-button color="primary" [disabled]="SNICKERActive" (click)="startSNICKERService()">
+    <mat-icon>not_started</mat-icon>
+    Start SNICKER
+</button>
+<button mat-icon-button color="primary" [disabled]="!SNICKERActive" (click)="stopSNICKERService()">
+    <mat-icon>not_started</mat-icon>
+    Stop SNICKER
+</button>
+<br>
+<div *ngIf="SNICKERActive; else elseBlock2">
+    SNICKER is active.
+</div>
+<ng-template #elseBlock2>
+    SNICKER is not currently active.
+</ng-template>
+</div>

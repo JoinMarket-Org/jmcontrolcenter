@@ -36,6 +36,7 @@ import { UnlockComponent } from './unlock/unlock.component';
 import { AboutComponent } from './about/about.component';
 import { JMServicesComponent } from './jmservices/jmservices.component';
 import { JMSettingsComponent } from './jmsettings/jmsettings.component';
+import { JMLogsComponent } from './jmlogs/jmlogs.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { JMSettingsComponent } from './jmsettings/jmsettings.component';
     UnlockComponent,
     AboutComponent,
     JMServicesComponent,
-    JMSettingsComponent
+    JMSettingsComponent,
+    JMLogsComponent
   ],
   imports: [
     BrowserModule,

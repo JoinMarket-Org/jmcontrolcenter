@@ -4,6 +4,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { AboutComponent } from './about/about.component';
 import { JMSettingsComponent } from './jmsettings/jmsettings.component';
 import { JMServicesComponent } from './jmservices/jmservices.component';
+import { JMLogsComponent } from './jmlogs/jmlogs.component';
 
 
 const routes: Routes = [
@@ -15,10 +16,14 @@ const routes: Routes = [
     component: AboutComponent
   },
   { path: "settings",
-component: JMSettingsComponent
-},
-{path: "services",
-component: JMServicesComponent}
+    component: JMSettingsComponent
+  },
+  { path: "services",
+    component: JMServicesComponent
+  },
+  { path: "logs",
+    component: JMLogsComponent
+  }
 ];
 
 @NgModule({

@@ -15,16 +15,16 @@
         </a>
         <a mat-list-item routerLink="/about" (click)="start.toggle()">
             <mat-icon>account_balance_wallet</mat-icon>
-            <span>info</span>
+            <span>Info</span>
+        </a>
+        <a mat-list-item routerLink="/logs" (click)="start.toggle()">
+            <mat-icon>textsms</mat-icon>
+            <span>Logs</span>
         </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-toolbar color="primary">
         <button mat-icon-button color="accent" (click)="start.open()"><mat-icon>menu</mat-icon></button>
-        <!--
-        <button mat-icon-button color="accent" (click)="openUnlockDialog()">Unlock wallet</button>
-        <button mat-icon-button color="accent" (click)="closeWallet()">Lock wallet</button>
-        -->
     </mat-toolbar>
     <router-outlet></router-outlet>
 </mat-sidenav-container>
