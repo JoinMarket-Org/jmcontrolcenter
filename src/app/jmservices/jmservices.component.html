@@ -3,6 +3,10 @@
     <mat-icon>not_started</mat-icon>
     Start maker
 </button>
+<button mat-icon-button color="primary" [disabled]="!makerActive" (click)="stopMakerService()">
+    <mat-icon>not_started</mat-icon>
+    Stop maker
+</button>
 <br>
 <div *ngIf="makerActive; else elseBlock">
     Maker is active.

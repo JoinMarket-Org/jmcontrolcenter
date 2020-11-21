@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>New wallet</h2>
+<div class="mat-dialog-content">
+    <span class="content-span full-width">Enter filename and password:</span>
+</div>
+<form [formGroup]="generateForm">
+<mat-form-field appearance="fill">
+    <mat-label>Wallet file name</mat-label>
+    <input matInput formControlName="fc">
+    <mat-hint>including extension e.g. wallet.jmdat</mat-hint>
+    <mat-error *ngIf="fc.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Password for new wallet:</mat-label>
+    <input matInput formControlName="fcpass" type="password">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Re-enter password:</mat-label>
+    <input matInput formControlName="fcpass2" type="password" (keyup.enter)="doGenerate()">
+  </mat-form-field>
+</form>
+  <br>
+<mat-dialog-actions>
+    <button mat-flat-button id="ok-button" (click)="doGenerate()">Generate</button>
+    <button mat-flat-button id="cancel-button" (click)="closeDialog()">Cancel</button>
+</mat-dialog-actions>

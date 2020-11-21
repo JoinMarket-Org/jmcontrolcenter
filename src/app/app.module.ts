@@ -37,6 +37,8 @@ import { AboutComponent } from './about/about.component';
 import { JMServicesComponent } from './jmservices/jmservices.component';
 import { JMSettingsComponent } from './jmsettings/jmsettings.component';
 import { JMLogsComponent } from './jmlogs/jmlogs.component';
+import { NewWalletComponent } from './new-wallet/new-wallet.component';
+import { GenWalletComponent } from './gen-wallet/gen-wallet.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { JMLogsComponent } from './jmlogs/jmlogs.component';
     AboutComponent,
     JMServicesComponent,
     JMSettingsComponent,
-    JMLogsComponent
+    JMLogsComponent,
+    NewWalletComponent,
+    GenWalletComponent
   ],
   imports: [
     BrowserModule,

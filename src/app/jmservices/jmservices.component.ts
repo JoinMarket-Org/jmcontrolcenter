@@ -60,4 +60,12 @@ export class JMServicesComponent implements OnInit {
     );
   }
 
+  stopMakerService(){
+    this.walletService.stopMakerService().
+    subscribe(result => {
+      console.log("stopping maker service.");
+      this.makerActive = false;
+    })
+  }
+
 }

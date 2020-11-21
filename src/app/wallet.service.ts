@@ -70,6 +70,18 @@ export class WalletService {
       return throwError('there was not a defined walletname, so cannot start maker');
     }
   }
+  stopMakerService(): Observable<any>{
+    console.log("stopMakerService was called");
+    const httpHeaders = new HttpHeaders({'JMCookie': 'dummycookie'});
+    if (this.walletname){
+    let makerUrl = this.ROOT_URL + '/wallet/'+this.walletname+'/maker/stop';
+    return this.http.get(makerUrl, {headers: httpHeaders});
+    }
+    else {
+      return throwError("there was not a defined wallet so cannot stop Maker.");
+    }
+  }
+
   startSNICKERService(): Observable<any>{
     console.log("startSNICKERService was called");
     const httpHeaders = new HttpHeaders({'JMCookie': 'dummycookie'});

@@ -5,9 +5,13 @@ import { AboutComponent } from './about/about.component';
 import { JMSettingsComponent } from './jmsettings/jmsettings.component';
 import { JMServicesComponent } from './jmservices/jmservices.component';
 import { JMLogsComponent } from './jmlogs/jmlogs.component';
+import { NewWalletComponent } from './new-wallet/new-wallet.component';
 
 
 const routes: Routes = [
+  { path: "generate",
+    component: NewWalletComponent
+  },
   {
     path: "wallet",
     component: WalletComponent
